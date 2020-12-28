@@ -1,7 +1,7 @@
 # mall
 Spring Cloud实现分布式电商项目
 
-# 开发环境
+# 开发环境搭建
 ## 1.后台
   * jdk1.8及以上版本(jdk1.8.271)
   * maven3.6.1及以上版本
@@ -62,7 +62,23 @@ File--->Settins--->Plugins--->Marketplace
 ### 7.live server（代码热部署）
 ### 8.open in browser（在浏览器打开页面）
 ### 9.Vetur（开发Vue项目的插件）
-  
+
+# git-ssh环境配置
+## 1. 下载并安装git
+[git下载地址](https://git-scm.com/)
+## 2. git 常用设置
+```
+//配置git提交时的名字
+git config --global user.name "your name"
+//配置git提交时的邮箱
+git config --global user.email "your email"
+```
+## 3.配置ssh免密登录
+[gitee配置ssh免密登录](https://gitee.com/help/articles/4191#article-header0)
+### 3.1 ssh-keygen -t rsa -C "yours@email.com" 生成秘钥,邮箱地址为注册码云/github时使用的邮箱地址
+### 3.2 将生成好的秘钥完整的复制到码云/github
+### 3.3 使用ssh -T git@gitee.com/ssh -T git@github.com测试连接是否成功
+
 
 
 
