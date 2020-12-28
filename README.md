@@ -75,9 +75,9 @@ git config --global user.email "your email"
 ```
 ## 3.配置ssh免密登录
 [gitee配置ssh免密登录](https://gitee.com/help/articles/4191#article-header0)
-* 3.1 ssh-keygen -t rsa -C "yours@email.com" 生成秘钥,邮箱地址为注册码云/github时使用的邮箱地址
-* 3.2 将生成好的秘钥完整的复制到码云/github
-* 3.3 使用ssh -T git@gitee.com/ssh -T git@github.com测试连接是否成功
+* ssh-keygen -t rsa -C "yours@email.com" 生成秘钥,邮箱地址为注册码云/github时使用的邮箱地址
+* 将生成好的秘钥完整的复制到码云/github
+* 使用ssh -T git@gitee.com/ssh -T git@github.com测试连接是否成功
 
 
 
