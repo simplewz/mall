@@ -3,9 +3,9 @@ Spring Cloud实现分布式电商项目
 
 # 开发环境
 ## 1.后台
-  jdk1.8及以上版本
-  maven3.6.1及以上版本
-  IDEA2019
+  * jdk1.8及以上版本(jdk1.8.271)
+  * maven3.6.1及以上版本
+  * IDEA2019
   
 ## maven做一些项目配置：
 ### 1. 配置阿里云镜像（下载jar包有较快的速度）
@@ -48,9 +48,9 @@ File--->Settins--->Plugins--->Marketplace
   MyBatisPlus开发的快速从mapper文件定位到xml文件的插件
 
 ## 2.前端
-  vscode
-  nodejs(相当于jdk)
-  npm(相当于maven)
+  * vscode
+  * nodejs(相当于jdk)
+  * npm(相当于maven)
   
 ## vscode插件安装
 ### 1. Auto Close Tag（自动开闭标签）
