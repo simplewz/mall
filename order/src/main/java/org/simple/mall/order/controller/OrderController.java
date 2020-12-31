@@ -1,6 +1,7 @@
 package org.simple.mall.order.controller;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import org.simple.mall.order.entity.OrderEntity;
+import org.simple.mall.order.feign.CouponService;
 import org.simple.mall.order.service.OrderService;
 import org.simple.common.utils.PageUtils;
 import org.simple.common.utils.R;
@@ -29,6 +31,9 @@ import org.simple.common.utils.R;
 public class OrderController {
     @Autowired
     private OrderService orderService;
+    
+    @Autowired
+    private CouponService couponService;
 
     /**
      * 列表
@@ -36,6 +41,11 @@ public class OrderController {
     @RequestMapping("/list")
     //@RequiresPermissions("order:order:list")
     public R list(@RequestParam Map<String, Object> params){
+    	
+    	R couponList=couponService.list(new HashMap<String, Object>());
+    	
+    	System.out.println(couponList);
+    	
         PageUtils page = orderService.queryPage(params);
 
         return R.ok().put("page", page);
