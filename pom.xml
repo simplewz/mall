@@ -19,6 +19,7 @@
         <module>ware</module>
         <module>renren-fast</module>
         <module>renren-generator</module>
+        <module>mall-gateway</module>
     </modules>
 
 

@@ -69,6 +69,12 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  *      默认所有的配置集都属于：DEFAULT_GROUP
  *
  *  项目配置使用规则：每个微服务创建自己的命名空间，使用配置分组来区分环境。
+ *
+ *  (2)同时加载多个配置集
+ *      1).微服务中的任何配置信息，任何配置文件都可以放在配置中心中
+ *      2).只需要在bootstrap.yml/bootstrap.properties配置文件中加载配置中心中的配置文件即可
+ *      3).获取配置的属性值可以使用SpringBoot中的@Value、@ConfigurationProperties等获取配置项的注解获取即可。
+ *
  * 三. 使用spring-cloud的openfeign进行微服务之间的远程调用
  * 1. 引入依赖
  *     <dependency>

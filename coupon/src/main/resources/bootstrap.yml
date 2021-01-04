@@ -8,20 +8,20 @@ spring:
       config:
         server-addr: 127.0.0.1:8848
         namespace: ddb5c66c-9238-4da1-ad3b-7e2fd142bf86
-        group: dev
+#        group: dev
         file-extension: yaml
-#        ext-config:
-#          - data-id: datasource.yml
-#            group: dev
-#            refresh: true
-#          - data-id: mybatis.yml
-#            group: dev
-#            refresh: true
-#          - data-id: other.yml
-#            group: dev
-#            refresh: true
-#          - data-id: test.yml
-#            group: dev
-#            refresh: true
+        ext-config:
+          - data-id: datasource.yml
+            group: dev
+            refresh: true
+          - data-id: mybatis.yml
+            group: dev
+            refresh: true
+          - data-id: other.yml
+            group: dev
+            refresh: true
+          - data-id: test.yml
+            group: dev
+            refresh: true
 
 
