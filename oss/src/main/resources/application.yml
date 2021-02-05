@@ -1,0 +1,16 @@
+#spring:
+  #cloud:
+    #alicloud:
+      #access-key: LTAI4FysbbKVmCqXaRAzGXCN
+      #secret-key: f9vcf547ZFlsKXKlKzBwcrJkvXoCmg
+      #oss:
+        #endpoint: oss-cn-hangzhou.aliyuncs.com
+        #bucket: simpleboo-mall
+
+
+#alicloud:
+#  access-key: LTAI4FysbbKVmCqXaRAzGXCN
+#  secret-key: f9vcf547ZFlsKXKlKzBwcrJkvXoCmg
+#  oss:
+#    endpoint: oss-cn-hangzhou.aliyuncs.com
+#    bucket: simpleboo-mall

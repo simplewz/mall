@@ -1,14 +1,11 @@
 package org.simple.mall.product.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import org.simple.mall.product.entity.CategoryEntity;
 import org.simple.mall.product.service.CategoryService;
@@ -30,6 +27,12 @@ public class CategoryController {
     @Autowired
     private CategoryService categoryService;
 
+    @GetMapping("/tree")
+    public R categoryTree(){
+        List<CategoryEntity> tree=categoryService.categoryTree();
+        return R.ok().put("data",tree);
+    }
+
     /**
      * 列表
      */
@@ -50,7 +53,7 @@ public class CategoryController {
     public R info(@PathVariable("catId") Long catId){
 		CategoryEntity category = categoryService.getById(catId);
 
-        return R.ok().put("category", category);
+        return R.ok().put("data", category);
     }
 
     /**
@@ -61,6 +64,12 @@ public class CategoryController {
     public R save(@RequestBody CategoryEntity category){
 		categoryService.save(category);
 
+        return R.ok();
+    }
+
+    @RequestMapping("/batchUpdate")
+    public R batchUpdate(@RequestBody CategoryEntity[] categoryArray){
+        categoryService.updateBatchById(Arrays.asList(categoryArray));
         return R.ok();
     }
 
@@ -77,8 +86,10 @@ public class CategoryController {
 
     /**
      * 删除
+     * @RequestBody:获取请求体，必须发送POST请求，GET请求没有请求体
+     * SpringMVC会将请求体的数据(json)转为对应的对象
      */
-    @RequestMapping("/delete")
+    @RequestMapping("/batchDelete")
     //@RequiresPermissions("product:category:delete")
     public R delete(@RequestBody Long[] catIds){
 		categoryService.removeByIds(Arrays.asList(catIds));
